@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 /********************************************************
 * Lviv'2020 // ACM // Hash table implementation example *
-*    file: acmhw12.c                                    *
+*    file: acmhw11.c                                    *
 *********************************************************/
 #include <stdio.h>
 #include <string.h>
@@ -126,9 +126,10 @@ int main() {
 		printf("Element not found\n");
 	}
 
-#ifdef __linux__ 
-	(void)getchar();
-#elif defined(_WIN32)    
+#if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
+	//printf("Press Enter to continue . . .");
+	//(void)getchar();
+#elif defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)    
 	system("pause");
 #else
 #endif
